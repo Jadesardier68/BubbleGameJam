@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1730387257543108721}
   - component: {fileID: 6128823458204936661}
   m_Layer: 0
-  m_Name: personnage bulle
+  m_Name: P_personnage bulle face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
