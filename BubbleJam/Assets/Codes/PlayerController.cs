@@ -11,16 +11,15 @@ public class PlayerController : MonoBehaviour
     public GameObject UINormal;
     public GameObject UIHot;
     public GameObject UICold;
+    
     public float speed = 3f;
+    public float jumpForce;
+    public bool facingRight = true;
 
     public Transform barrel;
-
-    public float jumpForce;
-    public Rigidbody2D playerBody;
-
-    public bool grounded;
-    public bool facingRight=true;
-    
+    public Transform groundCheck;
+    private Rigidbody2D playerBody;
+    public LayerMask groundlayer;
 
     // Start is called before the first frame update
     void Start()
@@ -84,30 +83,18 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if(Input.GetKeyDown(KeyCode.Space) && grounded)
+        if(Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             playerBody.velocity = new Vector2(playerBody.velocity.x, jumpForce);
         }
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public bool IsGrounded() 
     {
-        // Remplacez "LayerGround" par l'index numérique correspondant à votre layer "ground"
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
-        {
-            grounded = true;
-        }
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundlayer);
     }
 
-    public void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
-        {
-            grounded = false;
-        }
-    }
-     
-    
+         
     private void Flip()
     {
         facingRight = !facingRight;
