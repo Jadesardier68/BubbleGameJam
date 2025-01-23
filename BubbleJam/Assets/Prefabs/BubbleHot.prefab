@@ -106,7 +106,7 @@ MonoBehaviour:
   slideDuration: 2
   slideDistanceUp: 4
   slideDurationUp: 3
-  speed: 2
+  speed: 1
   lifeTimeMax: 4
   timer: 0
   timerBubble: 0
