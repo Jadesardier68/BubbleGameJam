@@ -11,7 +11,6 @@ public class BubbleController : MonoBehaviour
     public float slideDistanceUp;
     public float slideDurationUp;
     public float speed = 2;
-    
 
     public float lifeTimeMax = 10f;
     public float timer;
@@ -20,6 +19,7 @@ public class BubbleController : MonoBehaviour
 
     public bool isPaused = false;
     public PlayerController playercontroller;
+    private Animator bubbleAnimator;
     public Rigidbody2D bubbleBody;
     
 
@@ -30,7 +30,7 @@ public class BubbleController : MonoBehaviour
         {
             playercontroller = FindObjectOfType<PlayerController>();
         }
-
+        bubbleAnimator.GetComponent<Animator>();
         lifeSpanLeft = lifeSpanMax;
         BubbleShooting();
         StartCoroutine(ScaleThenStartTimer());
@@ -47,7 +47,8 @@ public class BubbleController : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= lifeTimeMax)
             {
-                Destroy(gameObject);
+                //Destroy(gameObject);
+                StartCoroutine(BubblePop());
             }
         }
     }
@@ -133,5 +134,12 @@ public class BubbleController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    IEnumerator BubblePop() 
+    {
+        bubbleAnimator.SetTrigger("Pop");
+        yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
     }
 }
