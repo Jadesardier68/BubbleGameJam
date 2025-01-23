@@ -8,8 +8,6 @@ public class BubbleController : MonoBehaviour
     public float lifeSpanMax = 3f; //points de vie max
     public float lifeSpanLeft; //points de vie restants
     public float slideDuration;
-   // public float slideDistanceRight = 2f;
-    //public float slideDistanceLeft = -2f;
     public float slideDistanceUp;
     public float slideDurationUp;
     public float speed = 2;
@@ -123,7 +121,11 @@ public class BubbleController : MonoBehaviour
     {
         isPaused = true;
         StartCoroutine(SlideOnY());
-        playercontroller.grounded = true;
+
+        if(collision.gameObject.layer==3)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void OnTriggerExit2D(Collider2D collision)
@@ -132,9 +134,7 @@ public class BubbleController : MonoBehaviour
         lifeSpanLeft = lifeSpanLeft - 1;
         if (lifeSpanLeft == 0)
         {
-            playercontroller.grounded = true;
             Destroy(gameObject);
-            
         }
     }
 }
