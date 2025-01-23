@@ -15,16 +15,19 @@ public class PlayerController : MonoBehaviour
     public float speed = 3f;
     public float jumpForce;
     public bool facingRight = true;
+    private int bubbleCounter;
+    private int bubbleMax;
 
     public Transform barrel;
     public Transform groundCheck;
     private Rigidbody2D playerBody;
-    public LayerMask groundlayer;
+    [SerializeField] LayerMask groundlayer;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerBody = GetComponent<Rigidbody2D>();   
+        playerBody = GetComponent<Rigidbody2D>();
+        bubbleMax = 3;
     }
 
     // Update is called once per frame
@@ -32,7 +35,7 @@ public class PlayerController : MonoBehaviour
     {
         Movement();
         
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && bubbleCounter < bubbleMax)
         {
             if(UINormal.activeSelf==true)
             {
@@ -49,6 +52,8 @@ public class PlayerController : MonoBehaviour
                 InstantiateBubblesCold();
             }
 
+            bubbleCounter += 1;
+            StartCoroutine(ResetBubbleCounter());
         }
     }
 
@@ -76,12 +81,9 @@ public class PlayerController : MonoBehaviour
         if(move<0 && facingRight)
         {
             Flip();
-        }
-        else if (move>0 && !facingRight)
-        {
+        } else if (move>0 && !facingRight) {
             Flip();
         }
-
 
         if(Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
@@ -99,5 +101,14 @@ public class PlayerController : MonoBehaviour
     {
         facingRight = !facingRight;
         gameObject.transform.Rotate(0, 180, 0);
+    }
+
+    IEnumerator ResetBubbleCounter() 
+    {
+        yield return new WaitForSeconds(4f);
+        bubbleCounter -= 1;
+
+        if(bubbleCounter < 0 ) 
+            bubbleCounter = 0;
     }
 }

@@ -47,9 +47,7 @@ public class BubbleController : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= lifeTimeMax)
             {
-                
                 Destroy(gameObject);
-                
             }
         }
     }
@@ -62,7 +60,6 @@ public class BubbleController : MonoBehaviour
     public void movementController() 
     {
         timerBubble += Time.deltaTime;
-        Debug.Log(timerBubble);
         if(timerBubble >= slideDuration) 
         {
             bubbleBody.velocity = new Vector2(0,0);
