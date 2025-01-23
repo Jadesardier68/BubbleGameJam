@@ -30,7 +30,7 @@ public class BubbleController : MonoBehaviour
         {
             playercontroller = FindObjectOfType<PlayerController>();
         }
-        bubbleAnimator.GetComponent<Animator>();
+        bubbleAnimator = gameObject.GetComponent<Animator>();
         lifeSpanLeft = lifeSpanMax;
         BubbleShooting();
         StartCoroutine(ScaleThenStartTimer());
@@ -139,7 +139,7 @@ public class BubbleController : MonoBehaviour
     IEnumerator BubblePop() 
     {
         bubbleAnimator.SetTrigger("Pop");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
 }
