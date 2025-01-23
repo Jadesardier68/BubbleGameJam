@@ -121,6 +121,11 @@ public class BubbleController : MonoBehaviour
     {
         isPaused = true;
         StartCoroutine(SlideOnY());
+
+        if(collision.gameObject.layer==3)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void OnTriggerExit2D(Collider2D collision)
