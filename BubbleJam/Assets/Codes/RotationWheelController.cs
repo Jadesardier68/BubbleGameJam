@@ -12,6 +12,6 @@ public class RotationWheelController : MonoBehaviour
     void Update()
     {
         transform.rotation = Quaternion.Euler(0, 0, 0);
-        transform.RotateAround(baseObject.position, Vector3.forward, rotationSpeed * Time.deltaTime);
+        transform.RotateAround(baseObject.position, Vector3.back, rotationSpeed * Time.deltaTime);
     }
 }
