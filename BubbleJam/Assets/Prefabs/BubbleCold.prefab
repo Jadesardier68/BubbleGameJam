@@ -107,14 +107,13 @@ MonoBehaviour:
   slideDistanceUp: 0
   slideDurationUp: 0
   speed: 2
-  lifeTimeMax: 10
+  lifeTimeMax: 4
   timer: 0
   timerBubble: 0
   elapsedTime: 0
   isPaused: 0
   playercontroller: {fileID: 8837021337579915486, guid: 3741ebb431526464e9ed8f2a6caf6cd5, type: 3}
   bubbleBody: {fileID: -6400513228061508789}
-  bubbleAudioSource: {fileID: 3324848922056076705}
 --- !u!61 &-2157991761569134979
 BoxCollider2D:
   m_ObjectHideFlags: 0

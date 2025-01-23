@@ -114,7 +114,6 @@ MonoBehaviour:
   isPaused: 0
   playercontroller: {fileID: 8837021337579915486, guid: 3741ebb431526464e9ed8f2a6caf6cd5, type: 3}
   bubbleBody: {fileID: -780652225816488599}
-  bubbleAudioSource: {fileID: 7428663995698839908}
 --- !u!61 &-1817982210632520908
 BoxCollider2D:
   m_ObjectHideFlags: 0
