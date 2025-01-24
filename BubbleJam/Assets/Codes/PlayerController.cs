@@ -150,9 +150,8 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator AttackAnimation() 
     {
-        sideAnimator.SetBool("Walk", false);
         sideAnimator.SetBool("Attack", true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.01f);
         sideAnimator.SetBool("Attack", false);
     }
 
@@ -171,13 +170,12 @@ public class PlayerController : MonoBehaviour
     IEnumerator StartJumpAnimation() 
     {
         yield return new WaitForSeconds(0.01f);
-        sideAnimator.SetBool("Walk", false);
         sideAnimator.SetBool("Jump", true);
     }
 
     IEnumerator StopJumpAnimation() 
     {
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.6f);
         sideAnimator.SetBool("Jump", false);
     }
 }

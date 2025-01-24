@@ -5,12 +5,8 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     Vector2 checkPointPos;
-    SpriteRenderer spriteRenderer;
+     [SerializeField] SpriteRenderer spriteRenderer;
 
-    private void Awake()
-    {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
 
     private void Start()
     {
