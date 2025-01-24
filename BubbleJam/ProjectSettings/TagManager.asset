@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ground
   - DeathLimit
+  - PlayerFeet
   layers:
   - Default
   - TransparentFX

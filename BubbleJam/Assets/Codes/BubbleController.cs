@@ -47,7 +47,6 @@ public class BubbleController : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= lifeTimeMax)
             {
-                //Destroy(gameObject);
                 StartCoroutine(BubblePop());
             }
         }
@@ -117,7 +116,7 @@ public class BubbleController : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player")) 
+        if(collision.gameObject.CompareTag("PlayerFeet")) 
         {
             isPaused = true;
             StartCoroutine(SlideOnY());
@@ -132,9 +131,8 @@ public class BubbleController : MonoBehaviour
 
     public void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player")) 
+        if(collision.gameObject.CompareTag("PlayerFeet")) 
         {
-            Debug.Log("Player exit");
             isPaused = false;
             currentLifePoint = currentLifePoint - 1;
             if (currentLifePoint == 0)

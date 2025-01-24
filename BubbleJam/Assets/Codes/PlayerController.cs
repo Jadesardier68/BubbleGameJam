@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D playerBody;
     [SerializeField] LayerMask groundlayer;
 
+    public bool isOnPlatform;
+    public Rigidbody2D platformRB;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,9 +79,18 @@ public class PlayerController : MonoBehaviour
     {
 
         float move = Input.GetAxisRaw("Horizontal");
-        playerBody.velocity = new Vector2(move * speed, playerBody.velocity.y);
 
-        if(move<0 && facingRight)
+
+        if (isOnPlatform)
+        {
+            playerBody.velocity = new Vector2(move * speed * 10, playerBody.velocity.y);
+        }
+        else
+        {
+            playerBody.velocity = new Vector2(move * speed, playerBody.velocity.y);
+        }
+
+        if (move<0 && facingRight)
         {
             Flip();
         } else if (move>0 && !facingRight) {
@@ -89,6 +101,8 @@ public class PlayerController : MonoBehaviour
         {
             playerBody.velocity = new Vector2(playerBody.velocity.x, jumpForce);
         }
+
+
     }
 
     public bool IsGrounded() 
