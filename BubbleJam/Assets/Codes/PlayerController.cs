@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject visualFront;
+    public GameObject visualSide;
+
+    private Animator frontAnimator;
+    private Animator sideAnimator;
+
     public GameObject bubblesNormal;
     public GameObject bubblesHot;
     public GameObject bubblesCold;
@@ -31,6 +37,8 @@ public class PlayerController : MonoBehaviour
     {
         playerBody = GetComponent<Rigidbody2D>();
         bubbleMax = 3;
+        frontAnimator = visualFront.GetComponent<Animator>();
+        sideAnimator = visualSide.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -80,6 +88,11 @@ public class PlayerController : MonoBehaviour
 
         float move = Input.GetAxisRaw("Horizontal");
 
+        if (playerBody.velocity.x > 0)
+        {
+            visualFront.SetActive(false);
+            visualSide.SetActive(true);
+        }
 
         if (isOnPlatform)
         {
