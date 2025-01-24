@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class BubbleController : MonoBehaviour
 {
-    public float lifeSpanMax = 3f; //points de vie max
-    public float lifeSpanLeft; //points de vie restants
+    public float lifePointMax = 3f; //points de vie max
+    public float currentLifePoint; //points de vie restants
     public float slideDuration;
     public float slideDistanceUp;
     public float slideDurationUp;
@@ -31,7 +31,7 @@ public class BubbleController : MonoBehaviour
             playercontroller = FindObjectOfType<PlayerController>();
         }
         bubbleAnimator = gameObject.GetComponent<Animator>();
-        lifeSpanLeft = lifeSpanMax;
+        currentLifePoint = lifePointMax;
         BubbleShooting();
         StartCoroutine(ScaleThenStartTimer());
 
@@ -117,23 +117,32 @@ public class BubbleController : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        isPaused = true;
-        StartCoroutine(SlideOnY());
-
-        if(collision.gameObject.layer==3)
+        if(collision.gameObject.CompareTag("Player")) 
         {
-            Destroy(gameObject);
+            isPaused = true;
+            StartCoroutine(SlideOnY());
         }
+
+        if (collision.gameObject.layer == 3)
+        {
+            StartCoroutine(BubblePop());
+        }
+
     }
 
     public void OnTriggerExit2D(Collider2D collision)
     {
-        isPaused = false;
-        lifeSpanLeft = lifeSpanLeft - 1;
-        if (lifeSpanLeft == 0)
+        if(collision.gameObject.CompareTag("Player")) 
         {
-            Destroy(gameObject);
+            Debug.Log("Player exit");
+            isPaused = false;
+            currentLifePoint = currentLifePoint - 1;
+            if (currentLifePoint == 0)
+            {
+                StartCoroutine(BubblePop());
+            }
         }
+
     }
 
     IEnumerator BubblePop() 

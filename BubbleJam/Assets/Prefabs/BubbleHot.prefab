@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 6817727677306794300}
   - component: {fileID: -5079583547447224789}
   - component: {fileID: 2454463341462440738}
-  - component: {fileID: 3927872757555308091}
   m_Layer: 3
   m_Name: BubbleHot
   m_TagString: ground
@@ -102,8 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15837857b54d7fb4db042f6150f1ec93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeSpanMax: 1
-  lifeSpanLeft: 0
+  lifePointMax: 3
+  currentLifePoint: 0
   slideDuration: 2
   slideDistanceUp: 4
   slideDurationUp: 3
@@ -304,48 +303,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!61 &3927872757555308091
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5467069573841558577}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.23903573, y: -0.014060974}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.92, y: 5.92}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.288055, y: 1.3923798}
-  m_EdgeRadius: 0
