@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public GameObject visualFront;
+    //public GameObject visualFront;
     public GameObject visualSide;
 
     private Animator frontAnimator;
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     {
         playerBody = GetComponent<Rigidbody2D>();
         bubbleMax = 3;
-        frontAnimator = visualFront.GetComponent<Animator>();
+        //frontAnimator = visualFront.GetComponent<Animator>();
         sideAnimator = visualSide.GetComponent<Animator>();
     }
 
@@ -48,6 +48,8 @@ public class PlayerController : MonoBehaviour
         
         if (Input.GetMouseButtonDown(0) && bubbleCounter < bubbleMax)
         {
+            StartCoroutine(AttackAnimation());
+
             if(UINormal.activeSelf==true)
             {
                 InstantiateBubblesNormal();
@@ -88,10 +90,12 @@ public class PlayerController : MonoBehaviour
 
         float move = Input.GetAxisRaw("Horizontal");
 
-        if (playerBody.velocity.x > 0)
+        if (playerBody.velocity.x > 0 || playerBody.velocity.x < 0)
         {
-            visualFront.SetActive(false);
-            visualSide.SetActive(true);
+            StartCoroutine(StartWalkAnimation());
+        } else if (playerBody.velocity.x == 0) 
+        {
+            StartCoroutine(StopWalkAnimation());
         }
 
         if (isOnPlatform)
@@ -112,9 +116,14 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
+            StartCoroutine(StartJumpAnimation());
             playerBody.velocity = new Vector2(playerBody.velocity.x, jumpForce);
         }
 
+        if(!IsGrounded()) 
+        {
+            StartCoroutine(StopJumpAnimation());
+        }
 
     }
 
@@ -127,7 +136,7 @@ public class PlayerController : MonoBehaviour
     private void Flip()
     {
         facingRight = !facingRight;
-        gameObject.transform.Rotate(0, 0, 0);
+        gameObject.transform.Rotate(0, 180, 0);
     }
 
     IEnumerator ResetBubbleCounter() 
@@ -137,5 +146,38 @@ public class PlayerController : MonoBehaviour
 
         if(bubbleCounter < 0 ) 
             bubbleCounter = 0;
+    }
+
+    IEnumerator AttackAnimation() 
+    {
+        sideAnimator.SetBool("Walk", false);
+        sideAnimator.SetBool("Attack", true);
+        yield return new WaitForSeconds(0.5f);
+        sideAnimator.SetBool("Attack", false);
+    }
+
+    IEnumerator StartWalkAnimation() 
+    {
+        yield return new WaitForSeconds(0.01f);
+        sideAnimator.SetBool("Walk", true);
+    }
+
+    IEnumerator StopWalkAnimation() 
+    {
+        yield return new WaitForSeconds(0.01f);
+        sideAnimator.SetBool("Walk", false);
+    }
+
+    IEnumerator StartJumpAnimation() 
+    {
+        yield return new WaitForSeconds(0.01f);
+        sideAnimator.SetBool("Walk", false);
+        sideAnimator.SetBool("Jump", true);
+    }
+
+    IEnumerator StopJumpAnimation() 
+    {
+        yield return new WaitForSeconds(0.8f);
+        sideAnimator.SetBool("Jump", false);
     }
 }
