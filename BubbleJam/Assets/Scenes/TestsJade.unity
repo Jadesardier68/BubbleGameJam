@@ -1535,7 +1535,6 @@ GameObject:
   - component: {fileID: 129555164}
   - component: {fileID: 129555168}
   - component: {fileID: 129555167}
-  - component: {fileID: 129555165}
   m_Layer: 3
   m_Name: Platform_3
   m_TagString: ground
@@ -1558,21 +1557,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1695968774}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &129555165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129555163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d3444a34c37b304ca9c246a2c5eb5cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 20
-  baseObject: {fileID: 1029426006}
-  playerController: {fileID: 0}
 --- !u!61 &129555167
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5205,7 +5189,6 @@ GameObject:
   - component: {fileID: 474215262}
   - component: {fileID: 474215266}
   - component: {fileID: 474215265}
-  - component: {fileID: 474215263}
   m_Layer: 3
   m_Name: Platform_4
   m_TagString: ground
@@ -5228,21 +5211,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1695968774}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &474215263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 474215261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d3444a34c37b304ca9c246a2c5eb5cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 20
-  baseObject: {fileID: 1029426006}
-  playerController: {fileID: 0}
 --- !u!61 &474215265
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11824,7 +11792,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1029426006}
   - component: {fileID: 1029426008}
-  - component: {fileID: 1029426007}
   m_Layer: 3
   m_Name: Base
   m_TagString: Untagged
@@ -11847,19 +11814,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1695968774}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1029426007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1029426005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfe18b99c2ff8124b831a1ec4c60d758, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 20
 --- !u!212 &1029426008
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11923,7 +11877,6 @@ GameObject:
   - component: {fileID: 1040260820}
   - component: {fileID: 1040260824}
   - component: {fileID: 1040260823}
-  - component: {fileID: 1040260821}
   m_Layer: 3
   m_Name: Platform_1
   m_TagString: ground
@@ -11946,21 +11899,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1695968774}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1040260821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1040260819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d3444a34c37b304ca9c246a2c5eb5cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 20
-  baseObject: {fileID: 1029426006}
-  playerController: {fileID: 0}
 --- !u!61 &1040260823
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19344,7 +19282,6 @@ GameObject:
   - component: {fileID: 1748050839}
   - component: {fileID: 1748050843}
   - component: {fileID: 1748050842}
-  - component: {fileID: 1748050840}
   m_Layer: 3
   m_Name: Platform_2
   m_TagString: ground
@@ -19367,21 +19304,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1695968774}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1748050840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1748050838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d3444a34c37b304ca9c246a2c5eb5cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 20
-  baseObject: {fileID: 1029426006}
-  playerController: {fileID: 0}
 --- !u!61 &1748050842
 BoxCollider2D:
   m_ObjectHideFlags: 0

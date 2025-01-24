@@ -29,9 +29,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D playerBody;
     [SerializeField] LayerMask groundlayer;
 
-    public bool isOnPlatform;
-    public Rigidbody2D platformRB;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -97,15 +94,8 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(StopWalkAnimation());
         }
-
-        if (isOnPlatform)
-        {
-            playerBody.velocity = new Vector2(move * speed * 10, playerBody.velocity.y);
-        }
-        else
-        {
-            playerBody.velocity = new Vector2(move * speed, playerBody.velocity.y);
-        }
+        
+        playerBody.velocity = new Vector2(move * speed, playerBody.velocity.y);
 
         if (move<0 && facingRight)
         {
