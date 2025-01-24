@@ -11,7 +11,7 @@ public class CameraFollow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      direction = new Vector3(1.6f,1.6f,-10f);
+      direction = new Vector3(8f,1.6f,-10f);
     }
 
     // Update is called once per frame

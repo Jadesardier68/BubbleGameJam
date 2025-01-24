@@ -8,13 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: c747f6f4bd23b1c4ea3666f354c0d8a3
-  - enabled: 0
-    path: Assets/Scenes/Jeu.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
     path: Assets/Scenes/TestsJade.unity
     guid: 603eb125e15d8844b9e5fe8f2e21effb
   - enabled: 1
     path: Assets/Scenes/EndGame.unity
     guid: 12f62a9acb64b4b4aa8b428631c6bf0f
+  - enabled: 1
+    path: Assets/Scenes/Credit.unity
+    guid: 1db489415ca13b9438b111f1ef3cb214
   m_configObjects: {}
