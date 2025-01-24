@@ -20,6 +20,7 @@ public class BubbleController : MonoBehaviour
     public bool isPaused = false;
     public PlayerController playercontroller;
     private Animator bubbleAnimator;
+    private BoxCollider2D boxCollider;
     public Rigidbody2D bubbleBody;
     
 
@@ -30,6 +31,7 @@ public class BubbleController : MonoBehaviour
         {
             playercontroller = FindObjectOfType<PlayerController>();
         }
+        boxCollider = gameObject.GetComponent<BoxCollider2D>();
         bubbleAnimator = gameObject.GetComponent<Animator>();
         currentLifePoint = lifePointMax;
         BubbleShooting();
