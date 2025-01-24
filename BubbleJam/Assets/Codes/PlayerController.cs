@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
     private void Flip()
     {
         facingRight = !facingRight;
-        gameObject.transform.Rotate(0, 180, 0);
+        gameObject.transform.Rotate(0, 0, 0);
     }
 
     IEnumerator ResetBubbleCounter() 
