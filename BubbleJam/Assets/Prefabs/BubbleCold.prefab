@@ -101,9 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15837857b54d7fb4db042f6150f1ec93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeSpanMax: 3
-  lifeSpanLeft: 0
-  slideDuration: 2
+  lifePointMax: 3
+  currentLifePoint: 0
+  slideDuration: 1
   slideDistanceUp: 0
   slideDurationUp: 0
   speed: 1

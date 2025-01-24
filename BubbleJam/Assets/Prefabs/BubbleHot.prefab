@@ -103,9 +103,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifePointMax: 3
   currentLifePoint: 0
-  slideDuration: 2
+  slideDuration: 1
   slideDistanceUp: 4
-  slideDurationUp: 3
+  slideDurationUp: 2
   speed: 1
   lifeTimeMax: 4
   timer: 0
