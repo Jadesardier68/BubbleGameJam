@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestsJade.unity
     guid: 603eb125e15d8844b9e5fe8f2e21effb
+  - enabled: 1
+    path: Assets/Scenes/EndGame.unity
+    guid: 12f62a9acb64b4b4aa8b428631c6bf0f
   m_configObjects: {}
