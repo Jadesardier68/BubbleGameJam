@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: c747f6f4bd23b1c4ea3666f354c0d8a3
   - enabled: 1
-    path: Assets/Scenes/TestsJade.unity
+    path: Assets/Scenes/Level.unity
     guid: 603eb125e15d8844b9e5fe8f2e21effb
   - enabled: 1
     path: Assets/Scenes/EndGame.unity
